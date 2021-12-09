@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.a617e044.chunk.css",
-    "main.js": "/static/js/main.dc375a7b.chunk.js",
-    "main.js.map": "/static/js/main.dc375a7b.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.4cc92157.js",
-    "runtime-main.js.map": "/static/js/runtime-main.4cc92157.js.map",
-    "static/js/2.d9a2deaf.chunk.js": "/static/js/2.d9a2deaf.chunk.js",
-    "static/js/2.d9a2deaf.chunk.js.map": "/static/js/2.d9a2deaf.chunk.js.map",
-    "static/js/3.1cfff444.chunk.js": "/static/js/3.1cfff444.chunk.js",
-    "static/js/3.1cfff444.chunk.js.map": "/static/js/3.1cfff444.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.d9a2deaf.chunk.js.LICENSE.txt": "/static/js/2.d9a2deaf.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/static/media/logo.6ce24c58.svg"
+    "main.css": "/comments-react-mobx-ts/static/css/main.a617e044.chunk.css",
+    "main.js": "/comments-react-mobx-ts/static/js/main.dc375a7b.chunk.js",
+    "main.js.map": "/comments-react-mobx-ts/static/js/main.dc375a7b.chunk.js.map",
+    "runtime-main.js": "/comments-react-mobx-ts/static/js/runtime-main.62825e59.js",
+    "runtime-main.js.map": "/comments-react-mobx-ts/static/js/runtime-main.62825e59.js.map",
+    "static/js/2.d9a2deaf.chunk.js": "/comments-react-mobx-ts/static/js/2.d9a2deaf.chunk.js",
+    "static/js/2.d9a2deaf.chunk.js.map": "/comments-react-mobx-ts/static/js/2.d9a2deaf.chunk.js.map",
+    "static/js/3.1cfff444.chunk.js": "/comments-react-mobx-ts/static/js/3.1cfff444.chunk.js",
+    "static/js/3.1cfff444.chunk.js.map": "/comments-react-mobx-ts/static/js/3.1cfff444.chunk.js.map",
+    "index.html": "/comments-react-mobx-ts/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/comments-react-mobx-ts/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.d9a2deaf.chunk.js.LICENSE.txt": "/comments-react-mobx-ts/static/js/2.d9a2deaf.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/comments-react-mobx-ts/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4cc92157.js",
+    "static/js/runtime-main.62825e59.js",
     "static/js/2.d9a2deaf.chunk.js",
     "static/css/main.a617e044.chunk.css",
     "static/js/main.dc375a7b.chunk.js"
