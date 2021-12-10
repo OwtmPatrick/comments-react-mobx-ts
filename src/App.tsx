@@ -1,12 +1,12 @@
 import React from 'react';
 import {Provider, rootStore} from './store/models/Root';
-import Comments from './components/Comments';
+import CommentsList from './components/Comments-list';
 
 function App(): JSX.Element {
 	return (
 		<Provider value={rootStore}>
 			<div className="App">
-				<Comments />
+				<CommentsList />
 			</div>
 		</Provider>
 	);
