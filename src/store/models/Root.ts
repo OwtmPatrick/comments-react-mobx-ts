@@ -12,6 +12,7 @@ const initialState = RootModel.create({
 			{
 				id: '1',
 				text: 'This is first comment',
+				author: 'Diego Lima',
 				date: new Date(),
 				rating: 0
 			}

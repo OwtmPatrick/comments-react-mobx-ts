@@ -4,6 +4,7 @@ const Comment = types
 	.model('Comment', {
 		id: types.identifier,
 		text: types.string,
+		author: types.string,
 		date: types.Date,
 		rating: 0
 	})
