@@ -9,8 +9,11 @@ const Comment = types
 		rating: 0
 	})
 	.actions(self => ({
-		setRating(rating: number) {
-			self.rating = rating;
+		incrementRating() {
+			self.rating += 1;
+		},
+		decrementRating() {
+			self.rating -= 1;
 		}
 	}));
 
