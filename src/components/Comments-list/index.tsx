@@ -14,8 +14,16 @@ const CommentsList = observer(() => {
 		<Stack spacing={2} alignItems="center">
 			<Button variant="contained">Add comment</Button>
 
-			{comments.map((comment: IComment) => (
-				<Comment key={comment.id} {...comment} />
+			{comments.map(({
+				id, incrementRating, decrementRating, timeAgo, ...rest
+			}: IComment) => (
+				<Comment
+					key={id}
+					incrementRating={incrementRating}
+					decrementRating={decrementRating}
+					timeAgo={timeAgo}
+					{...rest}
+				/>
 			))}
 		</Stack>
 	);

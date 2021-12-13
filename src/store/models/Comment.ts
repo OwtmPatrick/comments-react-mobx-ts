@@ -5,6 +5,7 @@ const Comment = types
 		id: types.identifier,
 		text: types.string,
 		author: types.string,
+		avatar: types.string,
 		date: types.Date,
 		rating: 0
 	})
@@ -16,14 +17,14 @@ const Comment = types
 			const day = 1000 * 60 * 60 * 24;
 
 			if (difference < hour) {
-				return `${Math.ceil(difference / minute)} minutes ago`;
+				return `${Math.round(difference / minute)} minutes ago`;
 			}
 
 			if (difference < day) {
-				return `${Math.ceil(difference / hour)} hours ago`;
+				return `${Math.round(difference / hour)} hours ago`;
 			}
 
-			return `${Math.ceil(difference / day)} days ago`;
+			return `${Math.round(difference / day)} days ago`;
 		}
 	}))
 	.actions(self => ({

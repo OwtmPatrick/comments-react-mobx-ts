@@ -14,20 +14,32 @@ import Rating from '../Rating';
 import StyledComment from './styles';
 
 export interface IComment {
-	id: string;
+	id?: string;
 	text: string;
 	author: string;
+	avatar: string;
 	date: Date;
 	rating: number;
+	incrementRating: () => void;
+	decrementRating: () => void;
+	timeAgo: () => string;
 }
 
-const Comment = ({text, author, date}: IComment): JSX.Element => (
+const Comment = ({
+	text,
+	author,
+	rating,
+	avatar,
+	incrementRating,
+	decrementRating,
+	timeAgo
+}: IComment): JSX.Element => (
 	<StyledComment>
 		<Card>
 			<CardHeader
 				avatar={(
-					<Avatar sx={{bgcolor: blue[700]}} aria-label="avatar">
-						R
+					<Avatar sx={{bgcolor: blue[700]}} aria-label="avatar" src={avatar}>
+						{avatar || author[0]}
 					</Avatar>
 				)}
 				title={author}
@@ -39,20 +51,20 @@ const Comment = ({text, author, date}: IComment): JSX.Element => (
 				</Typography>
 
 				<Typography variant="body2" color="text.secondary">
-					{/* {date} */}
+					{timeAgo()}
 				</Typography>
 			</CardContent>
 
 			<CardActions disableSpacing>
-				<IconButton aria-label="increment rating">
+				<IconButton aria-label="increment rating" onClick={incrementRating}>
 					<AddCircleOutline />
 				</IconButton>
 
-				<IconButton aria-label="decrement rating">
+				<IconButton aria-label="decrement rating" onClick={decrementRating}>
 					<RemoveCircleOutline />
 				</IconButton>
 
-				<Rating label="10" size="medium" />
+				<Rating rating={rating} size="medium" />
 			</CardActions>
 		</Card>
 	</StyledComment>
