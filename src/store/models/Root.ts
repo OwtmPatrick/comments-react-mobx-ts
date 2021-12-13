@@ -13,7 +13,18 @@ const initialState = RootModel.create({
 				id: '1',
 				text: 'This is first comment',
 				author: 'Diego Lima',
-				date: new Date(),
+				avatar: 'https://res.cloudinary.com/tinyfac-es/image/upload/w_1024,h_1024,c_fit/v1627200005/facebook/ti5hffx5qcawk7hrxed5.jpg',
+				// two days ago
+				date: new Date().setDate(new Date().getDate() - 2),
+				rating: 0
+			},
+			{
+				id: '2',
+				text: 'This is second comment',
+				author: 'Fica Pacianskiy',
+				avatar: '',
+				// 45 minutes ago
+				date: new Date().setMinutes(new Date().getMinutes() - 45),
 				rating: 0
 			}
 		]
