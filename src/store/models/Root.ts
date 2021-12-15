@@ -2,6 +2,8 @@ import {Instance, types} from 'mobx-state-tree';
 import {createContext, useContext} from 'react';
 import commentsStore from './Comments';
 
+import getUniqueId from '../../utils/getUniqueId';
+
 const RootModel = types.model({
 	commentsStore
 });
@@ -10,7 +12,7 @@ const initialState = RootModel.create({
 	commentsStore: {
 		comments: [
 			{
-				id: '1',
+				id: getUniqueId(),
 				text: 'This is first comment',
 				author: 'Diego Lima',
 				avatar: 'https://res.cloudinary.com/tinyfac-es/image/upload/w_1024,h_1024,c_fit/v1627200005/facebook/ti5hffx5qcawk7hrxed5.jpg',
@@ -19,7 +21,7 @@ const initialState = RootModel.create({
 				rating: 0
 			},
 			{
-				id: '2',
+				id: getUniqueId(),
 				text: 'This is second comment',
 				author: 'Fica Pacianskiy',
 				avatar: '',
