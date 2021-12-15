@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/comments-react-mobx-ts/static/js/main.ec49d2bf.chunk.js",
-    "main.js.map": "/comments-react-mobx-ts/static/js/main.ec49d2bf.chunk.js.map",
+    "main.js": "/comments-react-mobx-ts/static/js/main.3eb0fc58.chunk.js",
+    "main.js.map": "/comments-react-mobx-ts/static/js/main.3eb0fc58.chunk.js.map",
     "runtime-main.js": "/comments-react-mobx-ts/static/js/runtime-main.45815378.js",
     "runtime-main.js.map": "/comments-react-mobx-ts/static/js/runtime-main.45815378.js.map",
-    "static/js/2.b9a36409.chunk.js": "/comments-react-mobx-ts/static/js/2.b9a36409.chunk.js",
-    "static/js/2.b9a36409.chunk.js.map": "/comments-react-mobx-ts/static/js/2.b9a36409.chunk.js.map",
+    "static/js/2.a14203ae.chunk.js": "/comments-react-mobx-ts/static/js/2.a14203ae.chunk.js",
+    "static/js/2.a14203ae.chunk.js.map": "/comments-react-mobx-ts/static/js/2.a14203ae.chunk.js.map",
     "index.html": "/comments-react-mobx-ts/index.html",
-    "static/js/2.b9a36409.chunk.js.LICENSE.txt": "/comments-react-mobx-ts/static/js/2.b9a36409.chunk.js.LICENSE.txt"
+    "static/js/2.a14203ae.chunk.js.LICENSE.txt": "/comments-react-mobx-ts/static/js/2.a14203ae.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.45815378.js",
-    "static/js/2.b9a36409.chunk.js",
-    "static/js/main.ec49d2bf.chunk.js"
+    "static/js/2.a14203ae.chunk.js",
+    "static/js/main.3eb0fc58.chunk.js"
   ]
 }
