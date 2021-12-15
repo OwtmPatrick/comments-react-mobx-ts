@@ -24,7 +24,7 @@ const CommentsList = observer(() => {
 		<Stack spacing={2} alignItems="center" sx={{padding: 5}}>
 			<Button variant="contained" onClick={handleClickOpen}>Add comment</Button>
 
-			<AddComment open={open} handleClose={handleClose}/>
+			<AddComment open={open} handleClose={handleClose} />
 
 			{comments.map(({
 				id, incrementRating, decrementRating, timeAgo, ...rest

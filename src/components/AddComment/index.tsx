@@ -13,12 +13,20 @@ import {PhotoCamera} from '@mui/icons-material';
 import {useFormik} from 'formik';
 import validationSchema from './validationSchema';
 
+import getUniqueId from '../../utils/getUniqueId';
+
+import {useMst} from '../../store/models/Root';
+
 interface IAddComment {
 	open: boolean;
 	handleClose: () => void;
 }
 
 const AddComment = ({open, handleClose}: IAddComment): JSX.Element => {
+	const {
+		commentsStore: {addComment}
+	} = useMst();
+
 	const formik = useFormik({
 		initialValues: {
 			email: '',
@@ -28,12 +36,27 @@ const AddComment = ({open, handleClose}: IAddComment): JSX.Element => {
 		},
 		validationSchema,
 		onSubmit: values => {
-			console.log(values);
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+			const {email: string, ...rest} = values;
+
+			addComment({
+				...rest,
+				id: getUniqueId(),
+				date: new Date(),
+				rating: 0
+			});
+
+			formik.resetForm();
+			handleClose();
 		}
 	});
 
-	const handleCapture = ({target}: any) => {
-		const file = target.files[0];
+	const handleCapture = (e: React.ChangeEvent<HTMLInputElement>) => {
+		if (!e.target.files) {
+			return;
+		}
+
+		const file = e.target.files[0];
 		const reader = new FileReader();
 
 		reader.readAsDataURL(file);
@@ -45,7 +68,7 @@ const AddComment = ({open, handleClose}: IAddComment): JSX.Element => {
 
 	return (
 		<Dialog open={open} onClose={handleClose} sx={{'& .MuiDialog-paper': {width: '100%'}}}>
-			<form onSubmit={formik.handleSubmit}>
+			<form onSubmit={formik.handleSubmit} noValidate>
 				<DialogContent>
 					<Stack spacing={2}>
 						<TextField
