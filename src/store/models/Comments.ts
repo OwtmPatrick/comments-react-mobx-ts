@@ -8,7 +8,8 @@ type T = {
 	avatar: string;
 	date: Date;
 	rating: number;
-}
+	hidden: boolean;
+};
 
 const CommentStore = types
 	.model('CommentsStore', {

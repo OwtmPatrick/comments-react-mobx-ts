@@ -6,7 +6,8 @@ import {
 	CardHeader,
 	CardActions,
 	Typography,
-	IconButton
+	IconButton,
+	Link
 } from '@mui/material';
 import {blue} from '@mui/material/colors';
 import {AddCircleOutline, RemoveCircleOutline} from '@mui/icons-material';
@@ -20,9 +21,11 @@ export interface IComment {
 	avatar: string;
 	date: Date;
 	rating: number;
+	hidden: boolean;
 	incrementRating: () => void;
 	decrementRating: () => void;
 	timeAgo: () => string;
+	toggle: () => void;
 }
 
 const Comment = ({
@@ -30,43 +33,51 @@ const Comment = ({
 	author,
 	rating,
 	avatar,
+	hidden,
 	incrementRating,
 	decrementRating,
-	timeAgo
+	timeAgo,
+	toggle
 }: IComment): JSX.Element => (
 	<StyledComment>
-		<Card>
-			<CardHeader
-				avatar={(
-					<Avatar sx={{bgcolor: blue[700]}} aria-label="avatar" src={avatar}>
-						{avatar || author[0]}
-					</Avatar>
-				)}
-				title={author}
-			/>
+		{hidden ? (
+			<Link href="#" underline="always" onClick={toggle}>
+				Open comment
+			</Link>
+		) : (
+			<Card>
+				<CardHeader
+					avatar={(
+						<Avatar sx={{bgcolor: blue[700]}} aria-label="avatar" src={avatar}>
+							{avatar || author[0]}
+						</Avatar>
+					)}
+					title={author}
+				/>
 
-			<CardContent>
-				<Typography variant="body1" color="text.primary">
-					{text}
-				</Typography>
+				<CardContent>
+					<Typography variant="body1" color="text.primary">
+						{text}
+					</Typography>
 
-				<Typography variant="body2" color="text.secondary">
-					{timeAgo()}
-				</Typography>
-			</CardContent>
+					<Typography variant="body2" color="text.secondary">
+						{timeAgo()}
+					</Typography>
+				</CardContent>
 
-			<CardActions disableSpacing>
-				<IconButton aria-label="increment rating" onClick={incrementRating}>
-					<AddCircleOutline />
-				</IconButton>
+				<CardActions disableSpacing>
+					<IconButton aria-label="increment rating" onClick={incrementRating}>
+						<AddCircleOutline />
+					</IconButton>
 
-				<IconButton aria-label="decrement rating" onClick={decrementRating}>
-					<RemoveCircleOutline />
-				</IconButton>
+					<IconButton aria-label="decrement rating" onClick={decrementRating}>
+						<RemoveCircleOutline />
+					</IconButton>
 
-				<Rating rating={rating} size="medium" />
-			</CardActions>
-		</Card>
+					<Rating rating={rating} size="medium" />
+				</CardActions>
+			</Card>
+		)}
 	</StyledComment>
 );
 

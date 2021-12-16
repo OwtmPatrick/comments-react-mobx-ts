@@ -27,13 +27,14 @@ const CommentsList = observer(() => {
 			<AddComment open={open} handleClose={handleClose} />
 
 			{comments.map(({
-				id, incrementRating, decrementRating, timeAgo, ...rest
+				id, incrementRating, decrementRating, timeAgo, toggle, ...rest
 			}: IComment) => (
 				<Comment
 					key={id}
 					incrementRating={incrementRating}
 					decrementRating={decrementRating}
 					timeAgo={timeAgo}
+					toggle={toggle}
 					{...rest}
 				/>
 			))}

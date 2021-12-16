@@ -1,5 +1,7 @@
 import {types} from 'mobx-state-tree';
 
+const MINIMUM_RATING_FOR_HIDDEN_COMMENT = -10;
+
 const Comment = types
 	.model('Comment', {
 		id: types.identifier,
@@ -7,7 +9,8 @@ const Comment = types
 		author: types.string,
 		avatar: types.string,
 		date: types.Date,
-		rating: 0
+		rating: 0,
+		hidden: types.boolean
 	})
 	.views(self => ({
 		timeAgo(): string {
@@ -33,6 +36,13 @@ const Comment = types
 		},
 		decrementRating() {
 			self.rating -= 1;
+
+			if (self.rating < MINIMUM_RATING_FOR_HIDDEN_COMMENT) {
+				self.hidden = true;
+			}
+		},
+		toggle() {
+			self.hidden = !self.hidden;
 		}
 	}));
 

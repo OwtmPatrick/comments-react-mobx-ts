@@ -43,7 +43,8 @@ const AddComment = ({open, handleClose}: IAddComment): JSX.Element => {
 				...rest,
 				id: getUniqueId(),
 				date: new Date(),
-				rating: 0
+				rating: 0,
+				hidden: false
 			});
 
 			formik.resetForm();
