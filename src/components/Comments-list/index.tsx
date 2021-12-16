@@ -2,7 +2,7 @@ import React from 'react';
 import {Stack, Button} from '@mui/material';
 import {observer} from 'mobx-react-lite';
 import {useMst} from '../../store/models/Root';
-import Comment, {IComment} from '../Comment';
+import Comment, {ICommentOwnProps} from '../Comment';
 import AddComment from '../AddComment';
 
 const CommentsList = observer(() => {
@@ -28,8 +28,9 @@ const CommentsList = observer(() => {
 
 			{comments.map(({
 				id, incrementRating, decrementRating, timeAgo, toggle, ...rest
-			}: IComment) => (
+			}: ICommentOwnProps) => (
 				<Comment
+					id={id}
 					key={id}
 					incrementRating={incrementRating}
 					decrementRating={decrementRating}

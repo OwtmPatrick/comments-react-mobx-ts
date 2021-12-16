@@ -14,14 +14,9 @@ import {AddCircleOutline, RemoveCircleOutline} from '@mui/icons-material';
 import Rating from '../Rating';
 import StyledComment from './styles';
 
-export interface IComment {
-	id?: string;
-	text: string;
-	author: string;
-	avatar: string;
-	date: Date;
-	rating: number;
-	hidden: boolean;
+import IComment from '../../interfaces/Comment';
+
+export interface ICommentOwnProps extends IComment {
 	incrementRating: () => void;
 	decrementRating: () => void;
 	timeAgo: () => string;
@@ -38,7 +33,7 @@ const Comment = ({
 	decrementRating,
 	timeAgo,
 	toggle
-}: IComment): JSX.Element => (
+}: ICommentOwnProps): JSX.Element => (
 	<StyledComment>
 		{hidden ? (
 			<Link href="#" underline="always" onClick={toggle}>

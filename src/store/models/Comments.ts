@@ -1,22 +1,14 @@
 import {types} from 'mobx-state-tree';
 import Comment from './Comment';
 
-type T = {
-	id: string;
-	text: string;
-	author: string;
-	avatar: string;
-	date: Date;
-	rating: number;
-	hidden: boolean;
-};
+import IComment from '../../interfaces/Comment';
 
 const CommentStore = types
 	.model('CommentsStore', {
 		comments: types.array(Comment)
 	})
 	.actions(self => ({
-		addComment(data: T) {
+		addComment(data: IComment) {
 			self.comments.push(data);
 		}
 	}));
